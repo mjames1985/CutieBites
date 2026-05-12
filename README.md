@@ -1,2 +1,2 @@
 # CutieBites
-Cutie BItes by Jazee
+Cutie Bites by Jazee
