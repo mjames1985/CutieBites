@@ -1,0 +1,8 @@
+<div class="social-links">
+  <% social.forEach(link => { %>
+    <a href="<%= link.url %>" target="_blank" aria-label="<%= link.label %>" class="contact-link">
+      <%- link.icon %>
+      <span><%= link.text %></span>
+    </a>
+  <% }) %>
+</div>

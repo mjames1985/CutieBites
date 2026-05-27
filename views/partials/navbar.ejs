@@ -1,0 +1,11 @@
+<nav class="navbar">
+  <div class="hamburger" id="hamburger">☰</div>
+  <ul class="nav-links" id="navLinks">
+    <!-- Home now points to "/" instead of /CutieBites -->
+    <li><a class="<%= activePage === 'home' ? 'active' : '' %>" href="/">Home</a></li>
+    <li><a class="<%= activePage === 'donuts' ? 'active' : '' %>" href="/MiniDonuts">Mini Donuts</a></li>
+    <li><a class="<%= activePage === 'waffles' ? 'active' : '' %>" href="/MiniWaffles">Mini Waffles</a></li>
+    <li><a class="<%= activePage === 'flavors' ? 'active' : '' %>" href="/FlavorSets">Flavor Sets</a></li>
+  </ul>
+</nav>
+

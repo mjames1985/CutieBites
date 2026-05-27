@@ -1,0 +1,89 @@
+<div class="flavor-detail">
+  <h2><%= flavorName %></h2>
+
+  <div class="image-nav">
+    <!-- Left button -->
+    <button id="prevBtn" class="nav-btn">←</button>
+      <img src="<%= image %>" alt="<%= flavorName %>" class="zoomed-detail">
+      <button id="nextBtn" class="nav-btn">→</button>
+  </div>
+
+  <a href="<% if (activePage === 'flavors') { %>/FlavorSets<% } else if (activePage === 'donuts') { %>/MiniDonuts<% } else if (activePage === 'waffles') { %>/MiniWaffles<% } %>" 
+      class="back-link">← Back</a>
+   <script>
+    // Listen for Backspace key
+    document.addEventListener("keydown", function(event) {
+      // Check if Backspace was pressed
+      if (event.key === "Backspace") {
+        event.preventDefault(); // prevent browser from navigating back automatically
+        window.history.back();  // go back one page
+      }
+    });
+  </script>
+
+  <script>
+    // Flavor lists for each category
+    const flavorLists = {
+      donuts: [
+        "VioletS","UbeGlaze","Ube","StrawberryGlaze","RainbowSprinkles",
+        "RainbowConfetti","PinkSprinkles","PastelRainbowSprinkles","PastelRainbowBeads",
+        "Original","DarkChocoGlaze","Choco","BlueBeads","BabySprinkles","BabyBeads",
+        "WhiteChocoGlazeChristmasBalls","WhiteChocoGlazeChristmasMistletoe",
+        "WhiteChocoGlazeChristmasPearls","WhiteChocoGlazeChristmasTree",
+        "DarkChocoGlazeChristmasBalls","DarkChocoGlazeChristmasSprinkles",
+        "Chocmallows","Almondi","Chococcino","Cherub","Mallows",
+        "StrawburstSeries","ChocoStrawburstSeries","MilkyStrawburstSeries",
+        "ChocoButternut","UbeCoco"
+      ],
+      waffles: [
+        "Original","Ube","UbeDipped","DarkChocoDipped",
+        "Choco"
+        // … add the rest
+      ],
+      flavors: [
+        "DarkChocoPremiumMix","DarkChocoRainbowCustomMix","PurplePinkGoldTheme",
+        "UnicornFloral","SesameStreet","FathersDay","StPatricksDay","SonicTheme",
+        "Graduation","DarkChocoTrailMix","HarryPotterGryffindor","Minecraft",
+        "Doctor","HotWheels","PinkChocoGirlie","Mallows",
+        "PastelYellowFloral","Pokemon","KPopDemonHunters","PikachuPokeBall",
+        "Halloween","Huntrix","SajaBoys","Spiderman","Christmas","Roblox"
+        // … add the rest
+      ]
+    };
+
+    
+    const activePage = "<%= activePage %>";   // donuts, waffles, flavors
+    const currentFlavorKey = "<%= flavorKey %>"; // key of current flavor
+    const list = flavorLists[activePage];
+    let currentIndex = list.indexOf(currentFlavorKey);
+    const prevBtn = document.getElementById("prevBtn");
+    const nextBtn = document.getElementById("nextBtn");
+
+    // Hide buttons if at first or last
+    if (currentIndex <= 0) {
+      prevBtn.style.display = "none";
+    }
+    if (currentIndex >= list.length - 1) {
+      nextBtn.style.display = "none";    }
+
+    // Navigation
+    prevBtn.addEventListener("click", () => {
+      if (currentIndex > 0) {
+        const prevFlavor = list[currentIndex - 1];
+        window.location.href = "/" + 
+          (activePage === "donuts" ? "MiniDonuts" : activePage === "waffles" ? "MiniWaffles" : "FlavorSets") +
+          "/" + prevFlavor;
+      }
+    });
+
+    nextBtn.addEventListener("click", () => {
+      if (currentIndex < list.length - 1) {
+        const nextFlavor = list[currentIndex + 1];
+        window.location.href = "/" + 
+          (activePage === "donuts" ? "MiniDonuts" : activePage === "waffles" ? "MiniWaffles" : "FlavorSets") +
+          "/" + nextFlavor;
+      }
+    });
+  </script>
+
+</div>

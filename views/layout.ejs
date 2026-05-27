@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('partials/head') %>
+<body>
+  <h1>cutie bites</h1>
+  <h2>by Jazee</h2>
+  <div class="page-background" style="background-image: url('<%= backgroundImage %>');">
+    <%- include('partials/navbar') %>  
+    <script src="/js/modal.js"></script>
+    <script src="/js/zoom.js"></script>
+    <%- body %>
+  </div>  
+  <hr>
+  <%- include('partials/social-links') %>   
+  <%- include('partials/footer') %>
+  <script>
+    const hamburger = document.getElementById("hamburger");
+    const navLinks = document.getElementById("navLinks");
+    hamburger.addEventListener("click", () => {
+      navLinks.classList.toggle("show");
+    });
+  </script>
+</body>
+</html>

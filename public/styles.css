@@ -1,0 +1,484 @@
+h1,h2 {
+    text-align: center;   
+    color: rgb(105, 56, 29); 
+    margin: 0; 
+    padding: 0px;   
+    
+}
+
+h1{ 
+    background: linear-gradient(to right, rgb(213, 82, 163), rgb(255, 112, 191));
+    font-family: 'DM Serif Display', serif;
+}
+
+h2{
+    background: linear-gradient(to right, rgb(213, 82, 163), rgb(255, 112, 191));
+    font-family: 'Parisienne', cursive;
+}
+
+h3 {
+    padding-left: 20px;
+}
+
+
+
+body {
+    margin: 0;
+    background-color: rgba(255, 238, 240);
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+ p {
+   font-weight: 700;
+   margin: 10px;
+   margin-left: 10px;
+ }
+
+ .page-background {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: auto;
+  background-attachment: fixed;
+}
+
+.page-background,
+.intro-section {
+  background-size: cover;   /* ✅ keeps original aspect ratio */
+  background-repeat: center;
+  background-position: no-repeat; /* ✅ fixes it at the top */
+  min-height: 100vh;          /* still fills viewport height */
+}
+
+
+
+ .welcome-text {
+  margin-left: 10px;   /* shifts the whole block */
+  /* or padding-left: 10px; if you prefer indenting inside the block */
+}
+
+
+.intro-section {
+  background-image: url("/Images/home-page.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;         /* full viewport height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 40px;
+  text-align: center;
+  position: relative;
+}
+
+.intro-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 238, 240, 0.6); /* soft overlay tint */
+}
+
+.intro-section p,
+.intro-section .welcome-text {
+  position: relative;
+  z-index: 1; /* ensures text is above overlay */
+}
+
+
+.intro-text {
+  margin: 20px auto;
+  padding: 10px;
+  max-width: 800px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  text-align: center; /* or left, depending on your design */
+  color: rgb(105, 56, 29);
+}
+
+.intro-text2 {
+  margin: 20px auto;
+  padding: 10px;
+  max-width: 800px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  text-align: center; /* or left, depending on your design */
+  color: rgb(105, 56, 29);
+}
+
+li {
+
+    list-style: none;
+}
+
+.navbar {
+    padding: 10px;
+    background-color: rgb(252, 183, 199);
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    flex-basis: 150px;
+}
+
+.image-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px; /* space between buttons and image */
+}
+
+.nav-btn {
+  background-color: rgb(252, 183, 199);
+  border: none;
+  padding: 10px 15px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  border-radius: 5px;
+  color: rgb(105, 56, 29);
+  font-weight: bold;
+}
+
+.nav-btn:hover {
+  background-color: rgb(255, 112, 191);
+}
+
+
+.section {
+    padding: 0 40px;
+}
+
+.product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    list-style: none;
+    padding: 20px;
+    justify-content: flex-start;
+}
+
+.flavor-link {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Hover zoom only inside product grid */
+.product-grid .flavor-link img {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.product-grid .flavor-link img:hover {
+  transform: scale(1.05);
+}
+
+.flavor-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    width: 200px;
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+}
+
+.flavor-list li {
+    width: 200px;
+    text-align: center;
+}
+
+.flavor-list img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+
+.flavor-detail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;   /* centers horizontally */
+  justify-content: center; /* centers vertically if you want */
+  padding: 40px;
+  text-align: center;
+}
+.flavor-detail img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  margin: 20px 0;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  transition: none; /* no hover zoom */
+}
+
+
+.flavor-detail h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: rgb(252, 183, 199);
+  color: rgb(105, 56, 29);
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.back-link:hover {
+  background-color: rgb(255, 112, 191);
+}
+
+.zoomable {
+  cursor: pointer;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.zoomable.zoomed {
+  transform: scale(2); /* enlarge image */
+  z-index: 1000;
+  position: relative;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+}
+
+.zoomed-detail {
+  display: block;
+  margin: 20px auto;
+  max-width: 95vw;   /* fill most of viewport width */
+  max-height: 90vh;  /* fill most of viewport height */
+  object-fit: contain; /* keep proportions */
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+}
+
+
+
+.navbar {
+    background-color: rgb(252, 183, 199);
+    padding: 15px 30px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    position: relative;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    padding: 0; 
+    margin: 0;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: rgb(105, 56, 29);
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.nav-links a.active {
+    text-decoration: none;
+}
+
+.hamburger {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+
+
+@media (max-width: 768px) {
+
+    .zoomable.zoomed {
+        transform: scale(1.5); /* smaller zoom on tablets */
+    }   
+
+    .section {
+        padding: 0 20px;
+    }
+
+    .product-grid {
+        justify-content: center;
+    }
+
+    .flavor-list {
+        width: 150px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .flavor-list img {
+        width: 150px;
+        height: 150px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .hamburger {
+        display: block;
+        font-size: 2rem;
+        cursor: pointer;
+        margin-bottom: 10px;
+        margin-left: 0;
+    }
+
+
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-left: 5px;
+    }
+
+    .nav-links {
+        justify-content: center;
+        flex-wrap: wrap;
+        display: none;
+        flex-direction: column;
+        margin-top: 10px;
+        gap: 10px;     
+        padding: 0;
+        background-color: rgb(252, 183, 199);        
+        margin: 0;
+        border-radius: 10px;
+    }
+    
+     .nav-links.show {
+        display: flex;
+    }
+
+    .nav-links li {
+    padding-left: 5px;
+}
+}
+
+@media (max-width: 480px) {
+
+    .zoomable.zoomed {
+        transform: scale(1.2); /* smaller zoom on phones */
+    }    
+
+    .product-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .flavor-list {
+        width: 100%;
+        max-width: 250px;
+    }
+
+     .social-links {
+    justify-content: center;
+    flex-direction: column;   /* stack vertically */
+    align-items: center;
+    gap: 15px;
+  }
+
+  .contact-link {
+    font-size: 0.9rem;        /* slightly smaller text */
+  }
+
+  .contact-link svg {
+    width: 24px;              /* smaller icons */
+    height: 24px;
+  }
+
+  .social-links {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .contact-link {
+    font-size: 0.8rem;
+  }
+
+  .contact-link svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.contact-info {
+  background-color: #f8d7da; /* soft pink */
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.contact-info h3 {
+  font-family: 'DM Serif Display', serif;
+  margin-bottom: 1rem;
+}
+
+.contact-info a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.contact-info svg {
+  display: block;
+  margin: 0 auto;
+}
+
+.contact-info i {
+  display: block;
+  margin: 0 auto;
+  color: inherit;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;   /* centers horizontally */
+  gap: 20px;                 /* spacing between each link */
+  margin-top: 1rem;
+  flex-wrap: wrap; 
+}
+
+
+
+.contact-link {
+  display: inline-flex;       /* icon + text side by side */
+  align-items: center;        /* vertically align */
+  gap: 8px;                   /* space between icon and text */
+  text-decoration: none;
+  color: inherit;
+  margin: 0 10px;             /* spacing between links */
+}
+
+.contact-link svg {
+  flex-shrink: 0;             /* keep icon size fixed */
+}
+
+
+
+
+footer .text-body-secondary {
+  text-decoration: none !important;
+}
+
+footer {
+    text-align: center;
+}
+
